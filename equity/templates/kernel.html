@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="master.html" />
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+  <title>Kernel | Equity</title>
+</head>
+
+<body>
+  <div>
+      <div class="kernel_section">Details for kernel ${kernel.name}</div>
+  </div>
+  <table class="kernel">
+      <tr>
+          <td class="kernel_title"><b>Name:</b></td>
+          <td class="kernel_value"><a href="/kernels/${kernel.name}">${kernel.name}</a></td>
+      </tr>
+      <tr>
+          <td class="kernel_title"><b>Arch:</b></td>
+          <td class="kernel_value"><a href="/arches/${kernel.arch.name}">${kernel.arch.name}</a></td>
+      </tr>
+      <tr>
+          <td class="kernel_title"><b>Vendor:</b></td>
+          <td class="kernel_value"><a href="/vendors/${kernel.vendor.name}">${kernel.vendor.name}</a></td>
+      </tr>
+      <tr>
+          <td class="kernel_title"><b>Operating System:</b></td>
+          <td class="kernel_value"><a href="/osfamilies/${kernel.osrelease.osfamily.name}">${kernel.osrelease.osfamily.name} ${kernel.osrelease.name}</a></td>
+      </tr>
+      <tr>
+          <td class="kernel_title"><b>Owner:</b></td>
+          <td class="kernel_value"><a href="/users/${kernel.state.owner.user_name}">${kernel.state.owner.display_name}</a> <a href="mailto:${kernel.state.owner.email_address}">(${kernel.state.owner.email_address})</a></td>
+      </tr>
+      <tr>
+          <td class="kernel_title"><b>Comments:</b></td>
+          <td class="kernel_value">
+              <span py:for="comment in kernel.comments">
+                  ${comment.comment}
+              </span>
+          </td>
+      </tr>
+
+  </table>
+  <div class="clearingdiv" />
+</body>
+</html>

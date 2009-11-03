@@ -1,0 +1,4 @@
+recursive-include equity/public *
+include equity/public/favicon.ico
+recursive-include equity/i18n *
+recursive-include equity/templates *

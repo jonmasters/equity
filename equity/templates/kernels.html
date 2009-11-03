@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="master.html" />
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+  <title>Kernels | Equity</title>
+</head>
+
+<body>
+  <py:if test="admin==True">
+      <div class="kernels_control">
+          <h2>Kernel Controls</h2>
+          <a href="${tg.url('/kernels/new')}"><img src="${tg.url('/images/dbplus.png')}" alt="add kernel" style="border:0px;" /></a>
+      </div>
+  </py:if>
+  <div>
+      <h2>Kernels</h2>
+  </div>
+  <div>
+      <p>The following kernels are currently known to the Equity system.
+         The owner indicates who is currently assigned as the top-level contact
+         for questions relating to this architecture.</p>
+  </div>
+  <div class="kernels_list">
+      <span>
+        ${tmpl_context.paginators.kernels.pager()}
+      </span>
+  </div>
+
+  <table class="kernels_list">
+    <tr class="kernels_list">
+        <th class="kernels_list">
+            <b>Name</b>
+        </th>
+        <th class="kernels_list">
+            <b>Owner</b>
+        </th>
+        <th class="kernels_list_control">
+        </th>
+    </tr>
+    <?python row_color="#FFFFFF" ?>
+    <tr class="kernels_list" bgcolor="${row_color}" py:for="arch in kernels">
+        <td class="kernels_list">
+            <a href="/kernels/${arch.name}" class="kernels_list">${arch.name}</a>
+        </td>
+        <td class="kernels_list">
+            <a href="/users/${arch.state.owner.user_name}" class="kernels_list">${arch.state.owner.display_name}</a>
+        </td>
+         <td class="kernels_list_control">
+            <a href="/kernels/edit/${arch.name}" class="kernels_list_control"><img src="${tg.url('/images/pencil.png')}" alt="edit" style="border: 0px;" /></a>
+        </td>
+        <?python row_color = (row_color=="#f1f1f1") and "#FFFFFF" or "#f1f1f1" ?>
+    </tr>
+  </table>
+  <div class="clearingdiv" />
+</body>
+</html>

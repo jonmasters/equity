@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="master.html" />
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+  <title>License | Equity</title>
+</head>
+
+<body>
+  <div>
+      <div class="license_section">Details for license ${license.name}</div>
+  </div>
+  <table class="license">
+      <tr>
+          <td class="license_title"><b>Name:</b></td>
+          <td class="license_value"><a href="/licenses/${license.name}">${license.name}</a></td>
+      </tr>
+      <tr>
+          <td class="license_title"><b>Free:</b></td>
+          <td class="license_value">${license.free}</td>
+      </tr>
+      <tr>
+          <td class="license_title"><b>Owner:</b></td>
+          <td class="license_value"><a href="/users/${license.state.owner.user_name}">${license.state.owner.display_name}</a> <a href="mailto:${license.state.owner.email_address}">(${license.state.owner.email_address})</a></td>
+      </tr>
+      <tr>
+          <td class="license_title"><b>Comments:</b></td>
+          <td class="license_value">
+              <span py:for="comment in license.comments">
+                  ${comment.comment}
+              </span>
+          </td>
+      </tr>
+
+  </table>
+  <div class="clearingdiv" />
+</body>
+</html>

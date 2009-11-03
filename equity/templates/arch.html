@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="master.html" />
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+  <title>Arch | Equity</title>
+</head>
+
+<body>
+  <div>
+      <div class="arch_section">Details for arch ${arch.name}</div>
+  </div>
+  <table class="arch">
+      <tr>
+          <td class="arch_title"><b>Name:</b></td>
+          <td class="arch_value"><a href="/archs/${arch.name}">${arch.name}</a></td>
+      </tr>
+      <tr>
+          <td class="arch_title"><b>Owner:</b></td>
+          <td class="arch_value"><a href="/users/${arch.state.owner.user_name}">${arch.state.owner.display_name}</a> <a href="mailto:${arch.state.owner.email_address}">(${arch.state.owner.email_address})</a></td>
+      </tr>
+      <tr>
+          <td class="arch_title"><b>Comments:</b></td>
+          <td class="arch_value">
+              <span py:for="comment in arch.comments">
+                  ${comment.comment}
+              </span>
+          </td>
+      </tr>
+
+  </table>
+  <div class="clearingdiv" />
+</body>
+</html>

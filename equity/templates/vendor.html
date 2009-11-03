@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="master.html" />
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+  <title>Vendor information for ${vendor.name} | Equity</title>
+</head>
+
+<body>
+  <py:if test="admin==True">
+      <div class="vendors_control">
+          <h2>Vendor Controls</h2>
+          <a href="${tg.url('/vendors/new')}"><img src="${tg.url('/images/dbplus.png')}" alt="add vendor" style="border:0px;" /></a>
+      </div>
+  </py:if>
+  <div>
+      <div class="vendor_section">Details for vendor ${vendor.name}</div>
+  </div>
+  <div>
+      <p>The following information is available for the ${vendor.name} vendor.</p>
+  </div>
+  <table class="vendor">
+      <tr>
+          <td class="vendor_title"><b>Name:</b></td>
+          <td class="vendor_value"><a href="/vendors/${vendor.name}">${vendor.name}</a></td>
+      </tr>
+      <tr>
+          <td class="vendor_title"><b>Website:</b></td>
+          <td class="vendor_value"><a href="${vendor.website}">${vendor.website}</a></td>
+      </tr>
+      <tr>
+          <td class="vendor_title"><b>Owner:</b></td>
+          <td class="vendor_value"><a href="/users/${vendor.state.owner.user_name}">${vendor.state.owner.display_name}</a> <a href="mailto:${vendor.state.owner.email_address}">(${vendor.state.owner.email_address})</a></td>
+      </tr>
+      <tr>
+          <td class="vendor_title"><b>Alternative Names:</b></td>
+          <td class="vendor_value">
+              <div class="vendor_list">
+                  <span>
+                      ${tmpl_context.paginators.names.pager()}
+                  </span>
+              </div>
+              <table>
+                  <?python row_color="#FFFFFF" ?>
+                  <tr class="vendors_list" bgcolor="${row_color}" py:for="name in names">
+                      <td class="vendors_list">
+                          <a href="/vendors/${vendor.name}" class="vendors_list">${name.name}</a>
+                      </td>
+                      <?python row_color = (row_color=="#f1f1f1") and "#FFFFFF" or "#f1f1f1" ?>
+                  </tr>
+              </table>
+          </td>
+      </tr>
+      <tr>
+          <td class="vendor_title"><b>Comments:</b></td>
+          <td class="vendor_value">
+              <span py:for="comment in vendor.comments">
+                  ${comment.comment}
+              </span>
+          </td>
+      </tr>
+  </table>
+  <div class="clearingdiv" />
+</body>
+</html>

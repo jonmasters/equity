@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="master.html" />
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+  <title>Operating System information for ${osfamily.name} | Equity</title>
+</head>
+
+<body>
+  <py:if test="admin==True">
+      <div class="osfamilies_control">
+          <h2>Operating System Controls</h2>
+          <a href="${tg.url('/osfamilies/new')}"><img src="${tg.url('/images/dbplus.png')}" alt="add operating system" style="border: 0px;" /></a>
+      </div>
+  </py:if>
+  <div>
+      <div class="osfamily_section">Details for Operating System ${osfamily.name}</div>
+  </div>
+  <div>
+      <p>The following information is available for the ${osfamily.name} Operating System.</p>
+  </div>
+  <table class="osfamily">
+      <tr>
+          <td class="osfamily_title"><b>Name:</b></td>
+          <td class="osfamily_value"><a href="/osfamilies/${osfamily.name}">${osfamily.name}</a></td>
+      </tr>
+      <tr>
+          <td class="osfamily_title"><b>Vendor:</b></td>
+          <td class="osfamily_value"><a href="/vendors/${osfamily.vendor.name}">${osfamily.vendor.name}</a></td>
+      </tr>
+      <tr>
+          <td class="osfamily_title"><b>Owner:</b></td>
+          <td class="osfamily_value"><a href="/users/${osfamily.state.owner.user_name}">${osfamily.state.owner.display_name}</a> <a href="mailto:${osfamily.state.owner.email_address}">(${osfamily.state.owner.email_address})</a></td>
+      </tr>
+      <tr>
+          <td class="osfamily_title"><b>Releases:</b></td>
+          <td class="osfamily_value">
+              <div class="osfamily_list">
+                  <span>
+                      ${tmpl_context.paginators.osreleases.pager()}
+                  </span>
+              </div>
+              <table>
+                  <tr>
+                      <td>
+                          <table>
+                              <?python row_color="#FFFFFF" ?>
+                              <tr class="osfamilies_list" bgcolor="${row_color}" py:for="osrelease in osreleases">
+                                  <td>
+                                      <table>
+                                          <tr>
+                                              <td class="osfamily_title"><b>Release</b></td>
+                                              <td class="osfamily_value">${osrelease.name}</td>
+                                          </tr>
+                                          <tr>
+                                              <td class="osfamily_title"><b>Vendor</b></td>
+                                              <td class="osfamily_value">${osrelease.vendor.name}</td>
+                                          </tr>
+                                      </table>
+                                  </td>
+                                  <?python row_color = (row_color=="#f1f1f1") and "#FFFFFF" or "#f1f1f1" ?>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      <py:if test="admin==True">
+                                          <a href="${tg.url('/osfamilies/newrelease?osfamily_id='+str(osfamily.osfamily_id))}"><h2>Add release</h2></a>
+                                      </py:if>
+                                  </td>
+                              </tr>
+                          </table>
+                      </td>
+                  </tr>
+              </table>
+          </td>
+      </tr>
+      <tr>
+          <td class="osfamily_title"><b>Comments:</b></td>
+          <td class="osfamily_value">
+              <span py:for="comment in osfamily.comments">
+                  ${comment.comment}
+              </span>
+          </td>
+      </tr>
+  </table>
+  <div class="clearingdiv" />
+</body>
+</html>

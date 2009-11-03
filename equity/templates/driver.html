@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="master.html" />
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+  <title>Driver information for ${driver.name} | Equity</title>
+</head>
+
+<body>
+  <py:if test="admin==True">
+      <div class="drivers_control">
+          <h2>Driver Controls</h2>
+          <a href="${tg.url('/drivers/new')}"><img src="${tg.url('/images/dbplus.png')}" alt="add driver" style="border: 0px;" /></a>
+      </div>
+  </py:if>
+  <div>
+      <div class="driver_section">Details for driver ${driver.name}</div>
+  </div>
+  <div>
+      <p>The following information is available for the ${driver.name} driver.</p>
+  </div>
+  <table class="driver">
+      <tr>
+          <td class="driver_title"><b>Name:</b></td>
+          <td class="driver_value"><a href="/drivers/${driver.name}">${driver.name}</a></td>
+      </tr>
+      <tr>
+          <td class="driver_title"><b>Vendor:</b></td>
+          <td class="driver_value"><a href="/vendors/${driver.vendor.name}">${driver.vendor.name}</a></td>
+      </tr>
+      <tr>
+          <td class="driver_title"><b>Type:</b></td>
+          <td class="driver_value"><a href="/drivertypes/${driver.drivertype.name}">${driver.drivertype.name}</a></td>
+      </tr>
+      <tr>
+          <td class="driver_title"><b>Version:</b></td>
+          <td class="driver_value">${driver.version}</td>
+      </tr>
+      <tr>
+          <td class="driver_title"><b>Release Date:</b></td>
+          <td class="driver_value">${driver.release_date.year}-${driver.release_date.month}-${driver.release_date.day} ${driver.release_date.hour}:${driver.release_date.minute}:${driver.release_date.second}</td>
+      </tr>
+      <tr>
+          <td class="driver_title"><b>Owner:</b></td>
+          <td class="driver_value"><a href="/users/${driver.state.owner.user_name}">${driver.state.owner.display_name}</a> <a href="mailto:${driver.state.owner.email_address}">(${driver.state.owner.email_address})</a></td>
+      </tr>
+      <tr py:for="meta in driver.drivermeta">
+          <td class="driver_title"><b>${meta.tag}</b></td>
+          <td class="driver_value">${meta.value}</td>
+      </tr>
+      <tr>
+          <td class="driver_title"><b>Descriptions:</b></td>
+          <td class="driver_value">
+              <div class="driver_list">
+                  <span>
+                      ${tmpl_context.paginators.descriptions.pager()}
+                  </span>
+              </div>
+              <table>
+                  <?python row_color="#FFFFFF" ?>
+                  <tr class="drivers_list" bgcolor="${row_color}" py:for="description in descriptions">
+                      <td class="drivers_list">
+                          ${description.locale} ${description.description}
+                      </td>
+                      <?python row_color = (row_color=="#f1f1f1") and "#FFFFFF" or "#f1f1f1" ?>
+                  </tr>
+              </table>
+          </td>
+      </tr>
+      <tr>
+          <td class="driver_title"><b>Devices:</b></td>
+          <td class="driver_value">
+              <div class="driver_list">
+                  <span>
+                      ${tmpl_context.paginators.devices.pager()}
+                  </span>
+              </div>
+              <table>
+                  <?python row_color="#FFFFFF" ?>
+                  <tr class="drivers_list" bgcolor="${row_color}" py:for="device in devices">
+                      <td class="drivers_list">
+                          <a href="/devices/${device.name}" class="drivers_list">${device.name}</a>
+                      </td>
+                      <?python row_color = (row_color=="#f1f1f1") and "#FFFFFF" or "#f1f1f1" ?>
+                  </tr>
+                  <tr>
+                      <py:if test="admin==True">
+                          <td><div py:replace="tmpl_context.devices_form(dict(driver_id=driver.driver_id))">Input Form</div></td>
+                      </py:if>
+                  </tr>
+              </table>
+          </td>
+      </tr>
+      <tr>
+          <td class="driver_title"><b>Builds:</b></td>
+          <td class="driver_value">
+              <div class="driver_list">
+                  <span>
+                      ${tmpl_context.paginators.builds.pager()}
+                  </span>
+              </div>
+              <table>
+                  <?python row_color="#FFFFFF" ?>
+                  <tr class="drivers_list" bgcolor="${row_color}" py:for="build in builds">
+                      <td class="drivers_list">
+                          <table>
+                              <tr>
+                                  <td class="driver_title"><b>Build ID:</b></td>
+                                  <td class="driver_value">${build.driverbuild_id}</td>
+                              </tr>
+                              <tr>
+                                  <td class="driver_title"><b>Kernel:</b></td>
+                                  <td class="driver_value">${build.kernel.name}</td>
+                              </tr>
+                              <tr>
+                                  <td class="driver_title"><b>Vendor:</b></td>
+                                  <td class="driver_value">${build.vendor.name}</td>
+                              </tr>
+                              <tr>
+                                  <td class="driver_title"><b>Version:</b></td>
+                                  <td class="driver_value">${build.version}</td>
+                              </tr>
+                              <tr>
+                                  <td class="driver_title"><b>Release Date:</b></td>
+                                  <td class="driver_value">${build.release_date}</td>
+                              </tr>
+                              <tr py:for="meta in build.driverbuildmeta">
+                                  <td class="driver_title"><b>${meta.tag}</b></td>
+                                  <td class="driver_value">${meta.value}</td>
+                              </tr>
+                              <tr>
+                                  <td class="device_title"><b>Add meta data:</b></td>
+                                  <td class="device_value">
+                                      <py:if test="admin==True">
+                                          <div py:replace="tmpl_context.meta_form(dict(driverbuild_id=build.driverbuild_id))">Input Form</div>
+                                      </py:if>
+                                  </td>
+                              </tr> 
+                          </table>
+                      </td>
+                  <?python row_color = (row_color=="#f1f1f1") and "#FFFFFF" or "#f1f1f1" ?>
+                  </tr>
+                  <tr>
+                      <td>
+                          <py:if test="admin==True">
+                              <a href="${tg.url('/driverbuilds/new?driver_id='+str(driver.driver_id))}"><h2>Add a build</h2></a>
+                          </py:if>
+                      </td>
+                  </tr>
+              </table>
+         </td>
+     </tr>
+      <tr>
+          <td class="driver_title"><b>Comments:</b></td>
+          <td class="driver_value">
+              <span py:for="comment in driver.comments">
+                  ${comment.comment}
+              </span>
+          </td>
+      </tr>
+  </table>
+  <div class="clearingdiv" />
+</body>
+</html>

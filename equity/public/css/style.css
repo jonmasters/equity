@@ -1,0 +1,1349 @@
+html {
+	background: #555555 url('../images/pagebg.png') top left repeat-x;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	text-align: left;
+	width: 960px;
+	margin: 0 auto;
+	padding: 0;
+	font-size: 12px;
+	font-family:"Lucida Grande","Lucida Sans Unicode",geneva,verdana,sans-serif;
+}
+
+a {
+	color: #286571;
+}
+
+#header {
+	height: 132px;
+	margin: 10px 10px 0 10px;
+	background: url('../images/headerbg.png') top left no-repeat;
+}
+
+#header h1 {
+	padding: 0;
+	margin: 0;
+	padding-top: 30px;
+	padding-left: 180px;
+	color: #fff;
+	position: relative;
+	font-size: 36px;
+}
+
+#header h1 .subtitle {
+	font-size: 60%;
+	position: absolute;
+	left: 240px;
+	top: 70px;
+}
+
+ul#mainmenu {
+	margin: 0;
+	padding: 0 10px;
+	background: url('../images/menubg.png') top left no-repeat;
+	height: 38px;
+}
+
+ul#mainmenu li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	display: inline;
+	float: left;
+}
+
+ul#mainmenu li a {
+	color: #fff;
+	float: left;
+	height: 31px;
+	display: block;
+	line-height: 30px;
+	vertical-align: middle;
+	padding: 0 10px;
+	font-size: 12px;
+	text-decoration: none;
+	background: url('../images/menu-item-border.png') left top no-repeat;
+}
+
+ul#mainmenu li a:hover, ul#mainmenu li a.active {
+	background: url('../images/menu-item-actibg.png') left top no-repeat;
+}
+
+ul#mainmenu li.first a {
+	background: none;
+}
+
+ul#mainmenu li.first a:hover, ul#mainmenu li.first a.active {
+	background: url('../images/menu-item-actibg-first.png') left top no-repeat;
+}
+
+ul#mainmenu li.loginlogout
+{
+    float: right;
+    right: 10px;
+}
+
+ul#mainmenu li.loginlogout a:hover
+{
+    background: url('../images/menu-item-border.png') left top no-repeat;
+}
+
+#content {
+	background: #fff url('../images/contentbg.png') left bottom no-repeat;
+	margin : 0 10px 10px 10px;
+	padding: 0 10px;
+	overflow: hidden;
+}
+
+#content .currentpage {
+	margin-top: 0;
+}
+
+/* Login form*/
+
+#loginform
+{
+    text-align: center;
+}
+
+form.loginfields
+{
+    text-align: left;
+    width: 270px;
+    background: url('../images/loginbg.png') top left no-repeat;
+    padding: 0;
+    margin: 0 auto;
+    border: 0;
+}
+
+form.loginfields h2
+{
+    font-size: 16px;
+    float: left;
+    padding: 0;
+    margin: 5px;
+    margin-top: 0;
+    background: url('../images/loginheader-left.png') top left no-repeat;
+}
+
+* html form.loginfields h2
+{
+    margin-left: 3px;
+    width: 80px;
+    text-align: center;
+}
+
+form.loginfields h2 span
+{
+    background: url('../images/loginheader-right.png') right top no-repeat;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    font-size: 100%;
+    font-weight: normal;
+    color: #fff;
+    padding: 0 10px;
+}
+
+*+html form.loginfields h2 span
+{
+    padding: 0 20px;
+}
+
+form.loginfields label
+{
+    clear: left;
+    float: left;
+    margin-top: 5px;
+    margin-left: 10px;
+    width: 65px;
+    line-height: 31px;
+    vertical-align: middle;
+}
+
+form.loginfields input.text
+{
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 165px;
+    height: 21px;
+    padding: 5px;
+    border: 0;
+    background: url('../images/inputbg.png') top left no-repeat;
+    color: #fff;
+}
+
+form.loginfields input#submit
+{
+    background: url('../images/loginbottombg.png') bottom left no-repeat;
+    width: 270px;
+    height: 61px;
+    border: 0;
+    margin-top: 10px;
+    color: #fff;
+    padding: 10px 140px 20px 10px;
+}
+
+* html form.loginfields input#submit
+{
+    clear: both;
+    margin-left: -10px;
+}
+
+/* Sidebar */
+.sidebar {
+  border: 1px solid #cce;
+  background-color: #eee;
+  margin: 0.5em;
+  margin-left: 1.5em;
+  padding: 1em;
+  float: right;
+  width: 200px;
+  font-size: 88%;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  color: black;
+}
+
+.sidebar ul {
+  margin-left: 1.5em;
+  padding-left: 0;
+}
+
+
+
+#sb_top {
+  clear: right;
+}
+
+#sb_bottom {
+  clear: right;
+}
+
+#getting_started {
+  margin-left: 20px;
+}
+
+#getting_started_steps a {
+  text-decoration: none;
+}
+
+#getting_started_steps a:hover {
+  text-decoration: underline;
+}
+
+#getting_started_steps li {
+  margin-bottom: 0.5em;
+}
+
+/* Other and footer */
+#footer {
+	background: #fff;
+	padding: 10px;
+	color:#888888;
+	font-size:90%;
+}
+.flogo {
+	float:left;
+	margin-bottom:0px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:0px;
+}
+.foottext p {
+	margin: 0; padding: 0;
+}
+.code {
+font-family:monospace;
+font-size:127%;
+}
+span.code {
+background:#EEEEEE none repeat scroll 0% 0%;
+font-weight:bold;
+}
+#flash, .notice {
+font-size:120%;
+font-weight:bolder;
+margin:0pt auto 0.5em;
+width:680px;
+}
+#flash div, .notice {
+padding:20px 15px 20px 65px;
+}
+#flash .ok {
+background:#d8ecd8 url(../images/ok.png) no-repeat scroll 10px center;
+}
+#flash .warning {
+background:#fff483 url(../images/warning.png) no-repeat scroll 10px center;
+}
+#flash .error {
+background:#f9c5c1 url(../images/error.png) no-repeat scroll 10px center;
+}
+#flash .alert,
+#flash .info {
+background:#EEEEFF url(../images/info.png) no-repeat scroll 10px center;
+}
+.notice {
+background:#EEEEFF url(../images/info.png) no-repeat scroll 10px center;
+}
+.fielderror {
+color:red;
+font-weight:bold;
+}
+div.clearingdiv {
+clear:both;
+}
+
+/*
+ *  * The arches list (arches.html)
+ *   */
+div.arch_section {
+    text-align: left;
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+table.arch {
+    vertical-align: middle;
+    border-collapse: collapse;
+    width: 100%;
+    border-top: 1px solid #bcbcbc;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+table.arches_list {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th.arches_list {
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+th.arches_list_control {
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+tr.arches_list {
+    border-bottom: 1px solid #bcbcbc;
+}
+
+td.arches_list {
+    padding-left: 25px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+td.arches_list_control {
+    padding-left: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 50px;
+}
+
+td.arch_title {
+    text-align: right;
+    vertical-align: top;
+    background-color: #f1f1f1;
+    width: 25%;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+td.arch_value {
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+a.arches_list {
+    text-decoration: none;
+}
+
+div.arches_list {
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+div.arches_control {
+    text-align: left;
+    width: 200px;
+    float: right;
+    margin: 0.5em;
+    margin-right: 0px;
+    font-size: 88%;
+    background-color: #eee;
+    padding: 1em;
+    border: 1px solid #cce;
+}
+
+/*
+ *  * The devicetypes list (devicetypes.html)
+ *   */
+div.devicetype_section {
+    text-align: left;
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+table.devicetype {
+    vertical-align: middle;
+    border-collapse: collapse;
+    width: 100%;
+    border-top: 1px solid #bcbcbc;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+table.devicetypes_list {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th.devicetypes_list {
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+th.devicetypes_list_control {
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+tr.devicetypes_list {
+    border-bottom: 1px solid #bcbcbc;
+}
+
+td.devicetypes_list {
+    padding-left: 25px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+td.devicetypes_list_control {
+    padding-left: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 50px;
+}
+
+td.devicetype_title {
+    text-align: right;
+    vertical-align: top;
+    background-color: #f1f1f1;
+    width: 25%;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+td.devicetype_value {
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+a.devicetypes_list {
+    text-decoration: none;
+}
+
+div.devicetypes_list {
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+div.devicetypes_control {
+    text-align: left;
+    width: 200px;
+    float: right;
+    margin: 0.5em;
+    margin-right: 0px;
+    font-size: 88%;
+    background-color: #eee;
+    padding: 1em;
+    border: 1px solid #cce;
+}
+
+/*
+ *  * The drivertypes list (drivertypes.html)
+ *   */
+div.drivertype_section {
+    text-align: left;
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+table.drivertype {
+    vertical-align: middle;
+    border-collapse: collapse;
+    width: 100%;
+    border-top: 1px solid #bcbcbc;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+table.drivertypes_list {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th.drivertypes_list {
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+th.drivertypes_list_control {
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+tr.drivertypes_list {
+    border-bottom: 1px solid #bcbcbc;
+}
+
+td.drivertypes_list {
+    padding-left: 25px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+td.drivertypes_list_control {
+    padding-left: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 50px;
+}
+
+td.drivertype_title {
+    text-align: right;
+    vertical-align: top;
+    background-color: #f1f1f1;
+    width: 25%;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+td.drivertype_value {
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+a.drivertypes_list {
+    text-decoration: none;
+}
+
+div.drivertypes_list {
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+div.drivertypes_control {
+    text-align: left;
+    width: 200px;
+    float: right;
+    margin: 0.5em;
+    margin-right: 0px;
+    font-size: 88%;
+    background-color: #eee;
+    padding: 1em;
+    border: 1px solid #cce;
+}
+
+/*
+ *  * The kernels list (kernels.html)
+ *   */
+div.kernel_section {
+    text-align: left;
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+table.kernel {
+    vertical-align: middle;
+    border-collapse: collapse;
+    width: 100%;
+    border-top: 1px solid #bcbcbc;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+table.kernels_list {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th.kernels_list {
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+th.kernels_list_control {
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+tr.kernels_list {
+    border-bottom: 1px solid #bcbcbc;
+}
+
+td.kernels_list {
+    padding-left: 25px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+td.kernels_list_control {
+    padding-left: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 50px;
+}
+
+td.kernel_title {
+    text-align: right;
+    vertical-align: top;
+    background-color: #f1f1f1;
+    width: 25%;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+td.kernel_value {
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+a.kernels_list {
+    text-decoration: none;
+}
+
+div.kernels_list {
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+div.kernels_control {
+    text-align: left;
+    width: 200px;
+    float: right;
+    margin: 0.5em;
+    margin-right: 0px;
+    font-size: 88%;
+    background-color: #eee;
+    padding: 1em;
+    border: 1px solid #cce;
+}
+
+/*
+ *  * The licenses list (licenses.html)
+ *   */
+div.license_section {
+    text-align: left;
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+table.license {
+    vertical-align: middle;
+    border-collapse: collapse;
+    width: 100%;
+    border-top: 1px solid #bcbcbc;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+table.licenses_list {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th.licenses_list {
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+th.licenses_list_control {
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+tr.licenses_list {
+    border-bottom: 1px solid #bcbcbc;
+}
+
+td.licenses_list {
+    padding-left: 25px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+td.licenses_list_control {
+    padding-left: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 50px;
+}
+
+td.license_title {
+    text-align: right;
+    vertical-align: top;
+    background-color: #f1f1f1;
+    width: 25%;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+td.license_value {
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+a.licenses_list {
+    text-decoration: none;
+}
+
+div.licenses_list {
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+div.licenses_control {
+    text-align: left;
+    width: 200px;
+    float: right;
+    margin: 0.5em;
+    margin-right: 0px;
+    font-size: 88%;
+    background-color: #eee;
+    padding: 1em;
+    border: 1px solid #cce;
+}
+
+/*
+ *  * The systemfamilies list (systemfamilies.html)
+ *   */
+div.systemfamily_section {
+    text-align: left;
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+table.systemfamily {
+    vertical-align: middle;
+    border-collapse: collapse;
+    width: 100%;
+    border-top: 1px solid #bcbcbc;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+table.systemfamilies_list {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th.systemfamilies_list {
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+th.systemfamilies_list_control {
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+tr.systemfamilies_list {
+    border-bottom: 1px solid #bcbcbc;
+}
+
+td.systemfamilies_list {
+    padding-left: 25px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+td.systemfamilies_list_control {
+    padding-left: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 50px;
+}
+
+td.systemfamily_title {
+    text-align: right;
+    vertical-align: top;
+    background-color: #f1f1f1;
+    width: 25%;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+td.systemfamily_value {
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+a.systemfamilies_list {
+    text-decoration: none;
+}
+
+div.systemfamilies_list {
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+div.systemfamilies_control {
+    text-align: left;
+    width: 200px;
+    float: right;
+    margin: 0.5em;
+    margin-right: 0px;
+    font-size: 88%;
+    background-color: #eee;
+    padding: 1em;
+    border: 1px solid #cce;
+}
+
+/*
+ *  * The vendors list (vendors.html)
+ *   */
+div.vendor_section {
+    text-align: left;
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+table.vendor {
+    vertical-align: middle;
+    border-collapse: collapse;
+    width: 100%;
+    border-top: 1px solid #bcbcbc;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+table.vendors_list {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th.vendors_list {
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+th.vendors_list_control {
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+tr.vendors_list {
+    border-bottom: 1px solid #bcbcbc;
+}
+
+td.vendors_list {
+    padding-left: 25px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+td.vendors_list_control {
+    padding-left: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 50px;
+}
+
+td.vendor_title {
+    text-align: right;
+    vertical-align: top;
+    background-color: #f1f1f1;
+    width: 25%;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+td.vendor_value {
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+a.vendors_list {
+    text-decoration: none;
+}
+
+div.vendors_list {
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+div.vendors_control {
+    text-align: left;
+    width: 200px;
+    float: right;
+    margin: 0.5em;
+    margin-right: 0px;
+    font-size: 88%;
+    background-color: #eee;
+    padding: 1em;
+    border: 1px solid #cce;
+}
+
+
+/*
+ *  * The systems list (systems.html)
+ *   */
+div.system_section {
+    text-align: left;
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+table.system {
+    vertical-align: middle;
+    border-collapse: collapse;
+    width: 100%;
+    border-top: 1px solid #bcbcbc;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+table.systems_list {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th.systems_list {
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+th.systems_list_control {
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+tr.systems_list {
+    border-bottom: 1px solid #bcbcbc;
+}
+
+td.systems_list {
+    padding-left: 25px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+td.systems_list_control {
+    padding-left: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 50px;
+}
+
+td.system_title {
+    text-align: right;
+    vertical-align: top;
+    background-color: #f1f1f1;
+    width: 25%;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+td.system_value {
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+a.systems_list {
+    text-decoration: none;
+}
+
+div.systems_list {
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+div.systems_control {
+    text-align: left;
+    width: 200px;
+    float: right;
+    margin: 0.5em;
+    margin-right: 0px;
+    font-size: 88%;
+    background-color: #eee;
+    padding: 1em;
+    border: 1px solid #cce;
+}
+
+/*
+ *  * The devices list (devices.html)
+ *   */
+div.device_section {
+    text-align: left;
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+table.device {
+    vertical-align: middle;
+    border-collapse: collapse;
+    width: 100%;
+    border-top: 1px solid #bcbcbc;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+table.devices_list {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th.devices_list {
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+th.devices_list_control {
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+tr.devices_list {
+    border-bottom: 1px solid #bcbcbc;
+}
+
+td.devices_list {
+    padding-left: 25px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+td.devices_list_control {
+    padding-left: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 50px;
+}
+
+td.device_title {
+    text-align: right;
+    vertical-align: top;
+    background-color: #f1f1f1;
+    width: 25%;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+td.device_value {
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+a.devices_list {
+    text-decoration: none;
+}
+
+div.devices_list {
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+div.devices_control {
+    text-align: left;
+    width: 200px;
+    float: right;
+    margin: 0.5em;
+    margin-right: 0px;
+    font-size: 88%;
+    background-color: #eee;
+    padding: 1em;
+    border: 1px solid #cce;
+}
+
+/*
+ *  * The osfamilies list (osfamilies.html)
+ *   */
+div.osfamily_section {
+    text-align: left;
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+table.osfamily {
+    vertical-align: middle;
+    border-collapse: collapse;
+    width: 100%;
+    border-top: 1px solid #bcbcbc;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+table.osfamilies_list {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th.osfamilies_list {
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+th.osfamilies_list_control {
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+tr.osfamilies_list {
+    border-bottom: 1px solid #bcbcbc;
+}
+
+td.osfamilies_list {
+    padding-left: 25px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+td.osfamilies_list_control {
+    padding-left: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 50px;
+}
+
+td.osfamily_title {
+    text-align: right;
+    vertical-align: top;
+    background-color: #f1f1f1;
+    width: 25%;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+td.osfamily_value {
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+a.osfamilies_list {
+    text-decoration: none;
+}
+
+div.osfamilies_list {
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+div.osfamilies_control {
+    text-align: left;
+    width: 200px;
+    float: right;
+    margin: 0.5em;
+    margin-right: 0px;
+    font-size: 88%;
+    background-color: #eee;
+    padding: 1em;
+    border: 1px solid #cce;
+}
+
+/*
+ *  * The drivers list (drivers.html)
+ *   */
+div.driver_section {
+    text-align: left;
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+table.driver {
+    vertical-align: middle;
+    border-collapse: collapse;
+    width: 100%;
+    border-top: 1px solid #bcbcbc;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+table.drivers_list {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th.drivers_list {
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+th.drivers_list_control {
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #4f4f4f;
+}
+
+tr.drivers_list {
+    border-bottom: 1px solid #bcbcbc;
+}
+
+td.drivers_list {
+    padding-left: 25px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+td.drivers_list_control {
+    padding-left: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 50px;
+}
+
+td.driver_title {
+    text-align: right;
+    vertical-align: top;
+    background-color: #f1f1f1;
+    width: 25%;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+td.driver_value {
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+a.drivers_list {
+    text-decoration: none;
+}
+
+div.drivers_list {
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+div.drivers_control {
+    text-align: left;
+    width: 200px;
+    float: right;
+    margin: 0.5em;
+    margin-right: 0px;
+    font-size: 88%;
+    background-color: #eee;
+    padding: 1em;
+    border: 1px solid #cce;
+}

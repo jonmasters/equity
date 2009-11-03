@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="master.html" />
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+  <title>Device Type | Equity</title>
+</head>
+
+<body>
+  <div>
+      <div class="devicetype_section">Details for device type ${devicetype.name}</div>
+  </div>
+  <table class="devicetype">
+      <tr>
+          <td class="devicetype_title"><b>Name:</b></td>
+          <td class="devicetype_value"><a href="/devicetypes/${devicetype.name}">${devicetype.name}</a></td>
+      </tr>
+      <tr>
+          <td class="devicetype_title"><b>Owner:</b></td>
+          <td class="devicetype_value"><a href="/users/${devicetype.state.owner.user_name}">${devicetype.state.owner.display_name}</a> <a href="mailto:${devicetype.state.owner.email_address}">(${devicetype.state.owner.email_address})</a></td>
+      </tr>
+      <tr>
+          <td class="devicetype_title"><b>Comments:</b></td>
+          <td class="devicetype_value">
+              <span py:for="comment in devicetype.comments">
+                  ${comment.comment}
+              </span>
+          </td>
+      </tr>
+
+  </table>
+  <div class="clearingdiv" />
+</body>
+</html>

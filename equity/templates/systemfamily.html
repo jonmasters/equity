@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="master.html" />
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+  <title>System Family information for ${systemfamily.name} | Equity</title>
+</head>
+
+<body>
+  <py:if test="admin==True">
+      <div class="systems_control">
+          <h2>System Family Controls</h2>
+          <a href="${tg.url('/systemfamilies/new')}"><img src="${tg.url('/images/dbplus.png')}" alt="add system" style="border:0px;" /></a>
+      </div>
+  </py:if>
+  <div>
+      <div class="system_section">Details for system family ${systemfamily.name}</div>
+  </div>
+  <div>
+      <p>The following information is available for the ${systemfamily.name} system family.</p>
+  </div>
+  <table class="system">
+      <tr>
+          <td class="system_title"><b>Name:</b></td>
+          <td class="system_value"><a href="/systemfamilies/${systemfamily.name}">${systemfamily.name}</a></td>
+      </tr>
+      <tr>
+          <td class="system_title"><b>Vendor:</b></td>
+          <td class="system_value"><a href="/vendors/${systemfamily.vendor.name}">${systemfamily.vendor.name}</a></td>
+      </tr>
+      <tr>
+          <td class="system_title"><b>Owner:</b></td>
+          <td class="system_value"><a href="/users/${systemfamily.state.owner.user_name}">${systemfamily.state.owner.display_name}</a> <a href="mailto:${systemfamily.state.owner.email_address}">(${systemfamily.state.owner.email_address})</a></td>
+      </tr>
+      <tr>
+          <td class="system_title"><b>Systems:</b></td>
+          <td class="system_value">
+              <div class="system_list">
+                  <span>
+                      ${tmpl_context.paginators.systems.pager()}
+                  </span>
+              </div>
+              <table>
+                  <?python row_color="#FFFFFF" ?>
+                  <tr class="systems_list" bgcolor="${row_color}" py:for="system in systems">
+                      <td class="systems_list">
+                          <a href="/systems/${system.name}" class="systems_list">${system.name}</a>
+                      </td>
+                      <?python row_color = (row_color=="#f1f1f1") and "#FFFFFF" or "#f1f1f1" ?>
+                  </tr>
+              </table>
+          </td>
+      </tr>
+      <tr>
+          <td class="system_title"><b>Comments:</b></td>
+          <td class="system_value">
+              <span py:for="comment in systemfamily.comments">
+                  ${comment.comment}
+              </span>
+          </td>
+      </tr>
+  </table>
+  <div class="clearingdiv" />
+</body>
+</html>
